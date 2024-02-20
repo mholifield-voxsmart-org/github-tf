@@ -1,0 +1,33 @@
+Created a module for repo, that includes defaults for standardisation
+
+Private by default for repos for security reasons
+
+Enabling issues, projects, discussions and wiki by default but allowing override to disable
+
+Owner at repo level means admin
+
+Read only at repo level means pull
+
+State is currently just on local machine, however you would want to enable remote state and push somewhere like S3 and use DynamoDB for locking
+
+Auth sorted by personal access token and stored in local env variables
+
+To add new users to a team or the organization they would be added into the relevant list (backend_team_members or frontend_team_members) in the teams.tf file
+
+2 accounts added for testing (holifieldheights and mholifield-test-account01) once a terraform apply has been run, users will be required to accept an invitation to join the organization
+
+To add a new repo add a block similar to that already created for existing repos
+
+Currently run local, so terraform init then terraform plan and terraform apply
+
+
+
+
+
+Further iterations and improvements (time allowing)
+
+Wrap up permissions inside the repo_module
+
+Publish terraform module to an artifact store
+
+Add deployments on push to main (github actions or alike)
